@@ -12,8 +12,11 @@ class Calculadora extends StatefulWidget {
 class _CalculadoraState extends State<Calculadora> {
   final Memory memory = Memory();
 
-  _onPressed(String text) {
-    print(text);
+  _onPressed(String command) {
+    //print(text);
+    setState(() {
+      memory.applyCommand(command);
+    });
   }
 
   @override
@@ -23,7 +26,7 @@ class _CalculadoraState extends State<Calculadora> {
       home: Column(
         children: <Widget>[
           //Text('Display'),
-          Display('123.54'),
+          Display(memory.value),
           Keyboard(_onPressed),
         ],
       ),
