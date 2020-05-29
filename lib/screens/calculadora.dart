@@ -1,9 +1,21 @@
 import 'package:calculadora/components/keyboard.dart';
+import 'package:calculadora/models/memory.dart';
 import 'package:flutter/material.dart';
 import '../components/display.dart';
 import '../components/keyboard.dart';
 
-class Calculadora extends StatelessWidget {
+class Calculadora extends StatefulWidget {
+  @override
+  _CalculadoraState createState() => _CalculadoraState();
+}
+
+class _CalculadoraState extends State<Calculadora> {
+  final Memory memory = Memory();
+
+  _onPressed(String text) {
+    print(text);
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -12,7 +24,7 @@ class Calculadora extends StatelessWidget {
         children: <Widget>[
           //Text('Display'),
           Display('123.54'),
-          Keyboard(),
+          Keyboard(_onPressed),
         ],
       ),
     );

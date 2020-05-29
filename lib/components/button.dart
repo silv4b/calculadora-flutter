@@ -8,30 +8,29 @@ class Button extends StatelessWidget {
   final String text;
   final bool big;
   final Color color;
+  final void Function(String) cb; //callback dos botões
 
-  //componente requerido
+  //construtor
   Button({
+    //componente requerido
     @required this.text,
     this.big = false,
     this.color = DEFAULT,
+    @required this.cb,
   });
 
   Button.big({
     @required this.text,
     this.big = true,
     this.color = DEFAULT,
+    @required this.cb,
   });
 
   Button.operation({
     @required this.text,
     this.big = false,
     this.color = OPERATION,
-  });
-
-  Button.dark({
-    @required this.text,
-    this.big = false,
-    this.color = DARK,
+    @required this.cb,
   });
 
   @override
@@ -39,17 +38,18 @@ class Button extends StatelessWidget {
     return Expanded(
       flex: big ? 2 : 1, //[ternario] se for 'big' == 1, se não, == 2
       child: RaisedButton(
-        color: this.color,
-        child: Text(
-          text,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 32,
-            fontWeight: FontWeight.w200,
+          color: this.color,
+          child: Text(
+            text,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 32,
+              fontWeight: FontWeight.w200,
+            ),
           ),
-        ),
-        onPressed: () {},
-      ),
+          onPressed: () => cb(text),
+          shape: new RoundedRectangleBorder(
+              borderRadius: new BorderRadius.circular(0))),
     );
   }
 }
