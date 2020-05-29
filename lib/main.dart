@@ -1,6 +1,5 @@
+import 'package:calculadora/screens/calculator.dart';
 import 'package:flutter/material.dart';
-import "screens/calculadora.dart";
+import "screens/calculator.dart";
 
-//https://www.youtube.com/watch?v=jyjdXFsQoYw
-
-void main() => runApp(Calculadora());
+void main() => runApp(Calculator());

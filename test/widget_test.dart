@@ -5,7 +5,7 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:calculadora/screens/calculadora.dart';
+import 'package:calculadora/screens/calculator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -14,8 +14,7 @@ import 'package:flutter_test/flutter_test.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester
-        .pumpWidget(Calculadora()); // classe chamada no main em 'runApp'
+    await tester.pumpWidget(Calculator()); // classe chamada no main em 'runApp'
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);
