@@ -12,6 +12,7 @@ class ButtonRow extends StatelessWidget {
       flex: 1,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        //expande para coluna toda (altura)
         children: buttons,
       ),
     );

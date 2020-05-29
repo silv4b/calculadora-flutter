@@ -11,7 +11,7 @@ class Calculadora extends StatelessWidget {
       home: Column(
         children: <Widget>[
           //Text('Display'),
-          Display('132.54'),
+          Display('123.54'),
           Keyboard(),
         ],
       ),
