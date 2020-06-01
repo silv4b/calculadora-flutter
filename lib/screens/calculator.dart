@@ -1,5 +1,3 @@
-//base: https://www.youtube.com/watch?v=jyjdXFsQoYw
-
 import 'package:calculadora/components/keyboard.dart';
 import 'package:calculadora/models/memory.dart';
 import 'package:flutter/material.dart';
